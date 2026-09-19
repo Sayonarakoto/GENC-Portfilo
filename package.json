@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Sayonarakoto.github.io/Luminous-Hello",
+  "homepage": "https://Sayonarakoto.github.io/GENC-Portfilo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
