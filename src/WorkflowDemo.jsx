@@ -7,12 +7,11 @@ const getLucideIcon = (iconName) => {
   return IconComponent || LucideIcons.HelpCircle;
 };
 
-// REFINED COLOR PALETTE: Muted tech tones
 const workflowSteps = [
-  { title: "1. Secure Login", desc: "Email + Password → JWT Token", icon: "lock", status: "SECURED", color: "#10b981" }, // Emerald
-  { title: "2. Dynamic Authority", desc: "loadUserAndAuth → EffectiveApproverId", icon: "crown", status: "SYNCED", color: "#38bdf8" }, // Sky
-  { title: "3. Pass Approval", desc: "Student Submit → Temp HOD Approves", icon: "zap", status: "ACTIVE", color: "#6366f1" }, // Indigo
-  { title: "4. Live Audit & Status", desc: "Audit Trail + Pass Status Dashboard", icon: "bar-chart-2", status: "IMMUTABLE", color: "#f59e0b" } // Amber
+  { title: "Secure Login", desc: "Email + Password → JWT Token", icon: "lock", status: "SECURED", color: "#10b981" },
+  { title: "Dynamic Authority", desc: "loadUserAndAuth → EffectiveApproverId", icon: "crown", status: "SYNCED", color: "#38bdf8" },
+  { title: "Pass Approval", desc: "Student Submit → Temp HOD Approves", icon: "zap", status: "ACTIVE", color: "#6366f1" },
+  { title: "Live Audit & Status", desc: "Audit Trail + Pass Status Dashboard", icon: "bar-chart-2", status: "IMMUTABLE", color: "#f59e0b" }
 ];
 
 const WorkflowDemo = () => {
@@ -26,15 +25,10 @@ const WorkflowDemo = () => {
   }, []);
 
   return (
-    <section className="bg-transparent py-32 px-5 relative overflow-hidden font-mono">
-      {/* Editorial Grid Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
-
-      <div className="relative z-20 max-w-7xl mx-auto">
+    <section className="bg-white py-32 px-5 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-            <Motion.span className="text-emerald-500 text-xs tracking-[0.5em] font-bold block mb-4 uppercase">System_Architecture</Motion.span>
-            <h2 className="text-5xl font-black text-white tracking-tighter uppercase">Execution <span className="text-slate-700">Sequence</span></h2>
+          <h2 className="text-5xl font-black text-slate-800 tracking-tighter">Execution Sequence</h2>
         </div>
 
         <div className="flex gap-6 justify-center flex-wrap">
@@ -51,57 +45,43 @@ const WorkflowDemo = () => {
                 }}
                 className="flex-1 min-w-[280px] group"
               >
-                <div className={`relative h-full bg-slate-900/40 backdrop-blur-xl border transition-all duration-500 rounded-2xl p-8 
-                    ${isActive ? 'border-slate-500 shadow-[0_0_40px_rgba(0,0,0,0.5)]' : 'border-slate-800'}`}>
+                <div className={`relative h-full bg-white border border-slate-200 transition-all duration-500 rounded-2xl p-8 shadow-md 
+                    ${isActive ? 'border-slate-300 shadow-md' : ''}`}>
                   
-                  {/* Subtle Top Glow */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px]" 
-                       style={{ background: `linear-gradient(90deg, transparent, ${step.color}, transparent)` }} />
-
-                  {/* Icon & Index */}
-                  <div className="flex justify-between items-start mb-12">
-                    <div className={`p-3 rounded-lg bg-slate-950 border border-slate-800 transition-colors ${isActive ? 'text-white' : 'text-slate-600'}`}>
-                        <IconComponent size={32} style={{ color: isActive ? step.color : 'inherit' }} />
+                  <div className="flex justify-between items-start mb-8">
+                    <div className={`p-3 rounded-lg border border-slate-200 transition-colors`}>
+                      <IconComponent size={32} style={{ color: step.color }} />
                     </div>
-                    <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Phase_0{index + 1}</span>
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                      Phase_0{index + 1}
+                    </span>
                   </div>
 
-                  {/* Title & Status */}
-                  <h3 className={`text-xl font-bold mb-2 transition-colors ${isActive ? 'text-white' : 'text-slate-500'}`}>
+                  <h3 className={`text-xl font-bold mb-2 transition-colors text-slate-700`}>
                     {step.title}
                   </h3>
                   
-                  <div className="text-[10px] font-bold tracking-[0.2em] mb-6" style={{ color: step.color }}>
+                  <div className="text-[10px] font-bold tracking-[0.2em] mb-4" style={{ color: step.color }}>
                     {step.status}
                   </div>
 
-                  <p className="text-xs text-slate-400 leading-relaxed mb-8">
+                  <p className="text-xs text-slate-500 leading-relaxed mb-6">
                     {step.desc}
                   </p>
 
-                  {/* Progress Indicator */}
-                  <div className="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+                  <div className="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
                     <Motion.div 
-                        initial={{ width: 0 }}
-                        animate={{ width: isActive ? '100%' : '0%' }}
-                        transition={{ duration: 4, ease: "linear" }}
-                        className="h-full" 
-                        style={{ backgroundColor: step.color }} 
+                      initial={{ width: 0 }}
+                      animate={{ width: isActive ? '100%' : '0%' }}
+                      transition={{ duration: 4, ease: "linear" }}
+                      className="h-full" 
+                      style={{ backgroundColor: step.color }} 
                     />
                   </div>
                 </div>
               </Motion.div>
             );
           })}
-        </div>
-
-        {/* Footer Tags */}
-        <div className="flex flex-wrap justify-center gap-4 mt-20">
-          {["JWT_PROTOCOL", "AUTHORITY_LOGIC", "AUDIT_COMPLIANCE", "CRON_REVERSION"].map((tag, i) => (
-            <span key={i} className="px-4 py-2 bg-slate-900 border border-slate-800 rounded text-[10px] font-bold text-slate-500 tracking-widest">
-              {tag}
-            </span>
-          ))}
         </div>
       </div>
     </section>

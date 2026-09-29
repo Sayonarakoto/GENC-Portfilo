@@ -20,7 +20,7 @@ function GatePassCard({ step }) {
           : "0 20px 40px rgba(0,0,0,0.7)"
       }}
       transition={{ duration: 0.4 }}
-      className="flex-1 basis-[320px] max-w-[380px] bg-[rgba(15,15,25,0.9)] rounded-3xl border border-[rgba(0,255,136,0.35)] p-6 backdrop-blur-xl text-gray-100"
+      className="flex-1 basis-[320px] max-w-[380px] bg-white rounded-3xl border border-slate-200 p-6 shadow-md text-slate-800"
     >
       <div className="text-sm opacity-80 mb-4">
         {step <= 2 ? "Student – Gate Pass Form" : "Approver – Pending Gate Passes"}
@@ -33,7 +33,7 @@ function GatePassCard({ step }) {
           <Motion.div
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-gradient-to-r from-green-400 to-green-600 px-6 py-4 rounded-lg text-gray-900 font-bold text-lg shadow-[0_0_20px_rgba(0,255,136,0.7)]"
+            className="bg-gradient-to-r from-green-400 to-green-600 px-6 py-4 rounded-lg text-slate-800 font-bold text-lg shadow-[0_0_20px_rgba(0,255,136,0.7)]"
           >
             Gate Pass Request
           </Motion.div>
@@ -47,22 +47,22 @@ function GatePassCard({ step }) {
           <input
             type="text"
             placeholder="Reason (e.g., Doctor's appt)"
-            className="p-2.5 rounded-md border border-[rgba(0,255,136,0.4)] bg-[rgba(25,25,40,0.7)] text-gray-100"
+            className="p-2.5 rounded-md border border-[rgba(0,255,136,0.4)] bg-white border border-slate-200 text-slate-800"
           />
           <input
             type="text"
             placeholder="Destination (e.g., City Hospital)"
-            className="p-2.5 rounded-md border border-[rgba(0,255,136,0.4)] bg-[rgba(25,25,40,0.7)] text-gray-100"
+            className="p-2.5 rounded-md border border-[rgba(0,255,136,0.4)] bg-white border border-slate-200 text-slate-800"
           />
           <input
             type="text"
             placeholder="Return Time (e.g., 2:00 PM)"
-            className="p-2.5 rounded-md border border-[rgba(0,255,136,0.4)] bg-[rgba(25,25,40,0.7)] text-gray-100"
+            className="p-2.5 rounded-md border border-[rgba(0,255,136,0.4)] bg-white border border-slate-200 text-slate-800"
           />
           <Motion.button
             animate={{ scale: [1, 1.01, 1] }}
             transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-            className="mt-5 py-3 px-5 rounded-lg bg-gradient-to-r from-green-400 to-green-600 text-gray-900 font-bold border-none cursor-pointer shadow-[0_0_15px_rgba(0,255,136,0.5)]"
+            className="mt-5 py-3 px-5 rounded-lg bg-gradient-to-r from-green-400 to-green-600 text-slate-800 font-bold border-none cursor-pointer shadow-[0_0_15px_rgba(0,255,136,0.5)]"
           >
             Submit Request
           </Motion.button>
@@ -71,7 +71,7 @@ function GatePassCard({ step }) {
 
       {step === 2 && (
         // Small line: "Assigned to EffectiveApproverId • Status: Pending HOD"
-        <div className="text-center p-7 bg-[rgba(0,255,136,0.1)] rounded-xl border border-[rgba(0,255,136,0.4)]">
+        <div className="text-center p-7 bg-white rounded-xl border border-slate-200">
           <p className="text-lg text-green-400">Assigned to HOD Admin</p>
           <Motion.p
             initial={{ opacity: 0 }}
@@ -88,12 +88,12 @@ function GatePassCard({ step }) {
         // Approver pending list (one row highlighted)
         <div className="flex flex-col gap-2.5">
           <div className="text-sm opacity-70 mb-1">Pending Approvals (HOD)</div>
-          <div className="bg-[rgba(0,255,136,0.15)] p-2.5 rounded-lg border border-[rgba(0,255,136,0.4)]">
+          <div className="bg-white rounded-lg border border-slate-200">
             <p><strong>Student:</strong> Jane Doe</p>
             <p><strong>Reason:</strong> Doctor's Appointment</p>
             <p><strong>Status:</strong> Pending</p>
           </div>
-          <div className="bg-[rgba(25,25,40,0.7)] p-2.5 rounded-lg opacity-60">
+          <div className="bg-slate-100 rounded-lg opacity-60">
             <p>Student: John Smith</p>
             <p>Reason: Family Emergency</p>
             <p>Status: Pending</p>
@@ -104,7 +104,7 @@ function GatePassCard({ step }) {
       {step === 4 && (
         // Approve button pulsing
         <div className="flex flex-col gap-4">
-          <div className="bg-[rgba(0,255,136,0.15)] p-2.5 rounded-lg border border-[rgba(0,255,136,0.4)]">
+          <div className="bg-white rounded-lg border border-slate-200">
             <p><strong>Student:</strong> Jane Doe</p>
             <p><strong>Reason:</strong> Doctor's Appointment</p>
             <p><strong>Status:</strong> Pending</p>
@@ -112,12 +112,12 @@ function GatePassCard({ step }) {
           <Motion.button
             animate={{ scale: [1, 1.01, 1] }}
             transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-            className="py-3 px-5 rounded-lg bg-gradient-to-r from-green-400 to-green-600 text-gray-900 font-bold border-none cursor-pointer shadow-[0_0_15px_rgba(0,255,136,0.5)]"
+            className="py-3 px-5 rounded-lg bg-gradient-to-r from-green-400 to-green-600 text-slate-800 font-bold border-none cursor-pointer shadow-[0_0_15px_rgba(0,255,136,0.5)]"
           >
             Approve Gate Pass
           </Motion.button>
           <button
-            className="py-3 px-5 rounded-lg bg-gradient-to-r from-red-600 to-red-800 text-gray-100 font-bold border-none cursor-pointer mt-2.5"
+            className="py-3 px-5 rounded-lg bg-gradient-to-r from-red-600 to-red-800 text-slate-600 font-bold border-none cursor-pointer mt-2.5"
           >
             Decline
           </button>
@@ -128,7 +128,7 @@ function GatePassCard({ step }) {
         // Row badge turns green/red, "Approved" / "Declined"
         <div className="flex flex-col gap-2.5">
           <div className="text-sm opacity-70 mb-1">Pending Approvals (HOD)</div>
-          <div className="bg-[rgba(0,255,136,0.25)] p-2.5 rounded-lg border border-green-400">
+          <div className="bg-emerald-50 rounded-lg border border-emerald-200">
             <p><strong>Student:</strong> Jane Doe</p>
             <p><strong>Reason:</strong> Doctor's Appointment</p>
             <Motion.p

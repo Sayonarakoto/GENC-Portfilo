@@ -17,7 +17,7 @@ const deviceVariants = {
 };
 
 const MiniCard = ({ title }) => (
-  <div className="bg-white/10 rounded-lg p-3 text-xs text-center">
+  <div className="bg-white rounded-lg p-3 text-xs text-center border border-slate-200">
     {title}
   </div>
 );
@@ -27,7 +27,7 @@ function PreviewContent({ mode }) {
 
   return (
     <div
-      className={`w-full h-full flex gap-6 text-gray-100 font-['Inter',_sans-serif] overflow-auto ${isPhone ? "p-6 flex-col" : "p-8 flex-row"}`}
+      className={`w-full h-full flex gap-6 text-slate-800 font-['Inter',_sans-serif] overflow-auto ${isPhone ? "p-6 flex-col" : "p-8 flex-row"}`}
     >
       {/* Left: hero text */}
       <div
@@ -83,14 +83,14 @@ export default function ResponsiveShowcase() {
     <section
       className="min-h-screen flex flex-col items-center justify-center bg-transparent p-4 overflow-hidden"
     >
-        <h2 className="text-gray-100 font-['Inter',_sans-serif] mb-10 [text-shadow:0_0_20px_rgba(0,212,255,0.5)] text-3xl">
+        <h2 className="text-slate-800 font-['Inter',_sans-serif] mb-10 [text-shadow:0_0_20px_rgba(0,212,255,0.5)] text-3xl">
             Designed for Every Device
         </h2>
       <motion.div
         variants={deviceVariants}
         animate={mode}
         transition={{ duration: 1.2, ease: "easeInOut" }}
-        className="relative overflow-hidden bg-slate-800 shadow-[0_30px_80px_rgba(0,0,0,0.9),_0_0_40px_rgba(0,212,255,0.3)] border border-[rgba(0,212,255,0.4)]"
+        className="relative overflow-hidden bg-white shadow-lg border border-slate-200"
       >
         {/* Animated Label */}
         <AnimatePresence>
@@ -110,7 +110,7 @@ export default function ResponsiveShowcase() {
         <motion.div
             animate={{ opacity: mode === 'phone' ? 1 : 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-slate-900 rounded-lg z-10"
+            className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-slate-100 rounded-lg z-10"
         />
 
         <div

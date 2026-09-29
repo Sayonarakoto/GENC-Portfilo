@@ -10,7 +10,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="bg-slate-950 text-slate-300 min-h-screen w-full overflow-x-hidden">
+    <div className="bg-white text-slate-800 min-h-screen w-full overflow-x-hidden">
       <HeroAnimation />
       <WorkflowDemo />
       <LatecomerFeature />

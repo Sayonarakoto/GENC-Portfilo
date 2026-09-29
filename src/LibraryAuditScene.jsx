@@ -18,7 +18,7 @@ function LibraryAuditCard({ step }) {
         boxShadow: "0 20px 50px rgba(0,0,0,0.8)"
       }}
       transition={{ duration: 0.4 }}
-      className="flex-1 basis-[320px] max-w-md bg-[rgba(20,10,30,0.9)] rounded-3xl border border-[rgba(255,155,255,0.4)] p-6 backdrop-blur-xl text-[#fdf5ff]"
+      className="flex-1 basis-[320px] max-w-md bg-white rounded-3xl border border-slate-200 p-6 shadow-md text-slate-800"
     >
       {/* Tabs */}
       <div className="flex mb-4">
@@ -36,7 +36,7 @@ function LibraryAuditCard({ step }) {
           <Motion.div
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-gradient-to-r from-pink-400 to-yellow-400 px-6 py-4 rounded-lg text-gray-900 font-bold text-lg shadow-[0_0_20px_rgba(255,155,255,0.7)]"
+            className="bg-gradient-to-r from-pink-400 to-yellow-400 px-6 py-4 rounded-lg text-slate-800 font-bold text-lg shadow-[0_0_20px_rgba(255,155,255,0.7)]"
           >
             Library Section
           </Motion.div>
@@ -48,17 +48,17 @@ function LibraryAuditCard({ step }) {
           <input
             type="text"
             placeholder="Book ID / Name"
-            className="p-2.5 rounded-md border border-[rgba(255,155,255,0.4)] bg-[rgba(30,15,40,0.7)] text-[#fdf5ff]"
+            className="p-2.5 rounded-md border border-[rgba(255,155,255,0.4)] bg-white border border-slate-200 text-slate-800"
           />
           <input
             type="text"
             placeholder="Borrower ID"
-            className="p-2.5 rounded-md border border-[rgba(255,155,255,0.4)] bg-[rgba(30,15,40,0.7)] text-[#fdf5ff]"
+            className="p-2.5 rounded-md border border-[rgba(255,155,255,0.4)] bg-white border border-slate-200 text-slate-800"
           />
           <Motion.button
             animate={{ scale: [1, 1.01, 1] }}
             transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-            className="mt-5 py-3 px-5 rounded-lg bg-gradient-to-r from-pink-400 to-yellow-400 text-gray-900 font-bold border-none cursor-pointer shadow-[0_0_15px_rgba(255,155,255,0.5)]"
+            className="mt-5 py-3 px-5 rounded-lg bg-gradient-to-r from-pink-400 to-yellow-400 text-slate-800 font-bold border-none cursor-pointer shadow-[0_0_15px_rgba(255,155,255,0.5)]"
           >
             Issue/Return Book
           </Motion.button>
@@ -69,12 +69,12 @@ function LibraryAuditCard({ step }) {
       {step === 2 && (
         <div className="flex flex-col gap-2.5">
           <div className="text-sm opacity-70 mb-1">Audit Trail (Filtered)</div>
-          <div className="bg-[rgba(255,155,255,0.15)] p-2.5 rounded-lg border border-[rgba(255,155,255,0.4)]">
+          <div className="bg-white rounded-lg border border-slate-200">
             <p><strong>Event:</strong> DELEGATED</p>
             <p><strong>User:</strong> HOD Admin (ID: U005)</p>
             <p><strong>Timestamp:</strong> 2023-11-20</p>
           </div>
-          <div className="bg-[rgba(30,15,40,0.7)] p-2.5 rounded-lg opacity-60">
+          <div className="bg-slate-100 rounded-lg opacity-60">
             <p>Event: LIBRARY_ISSUED</p>
             <p>User: Librarian (ID: U012)</p>
             <p>Timestamp: 2023-11-21</p>
@@ -82,7 +82,7 @@ function LibraryAuditCard({ step }) {
         </div>
       )}
       {step === 3 && (
-        <div className="bg-[rgba(255,155,255,0.25)] p-5 rounded-xl border border-pink-400">
+        <div className="bg-pink-50 rounded-xl border border-pink-200">
           <p className="text-xl font-bold text-pink-400 mb-4">Audit Event Details</p>
           <p><strong>Actor:</strong> HOD Admin (ID: U005)</p>
           <p><strong>Action:</strong> DELEGATED Authority</p>

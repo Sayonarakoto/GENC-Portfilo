@@ -32,7 +32,7 @@ function StudentCard({ step }) {
           : "0 20px 40px rgba(0,0,0,0.7)"
       }}
       transition={{ duration: 0.4 }}
-      className="flex-1 basis-[320px] max-w-[380px] bg-[rgba(15,15,25,0.9)] rounded-3xl border border-[rgba(0,212,255,0.35)] p-6 backdrop-blur-xl text-gray-100"
+      className="flex-1 basis-[320px] max-w-[380px] bg-white rounded-3xl border border-slate-200 p-6 shadow-md text-slate-800"
     >
       {/* header */}
       <div className="text-sm opacity-80 mb-4">
@@ -42,15 +42,15 @@ function StudentCard({ step }) {
       {step === 0 && (
         <>
           {/* Login view */}
-          <div className="mb-2.5">Email: <input type="email" value="student@genc.edu" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-gray-100" /></div>
-          <div className="mb-5">Password: <input type="password" value="********" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-gray-100" /></div>
+          <div className="mb-2.5">Email: <input type="email" value="student@genc.edu" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-slate-600" /></div>
+          <div className="mb-5">Password: <input type="password" value="********" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-slate-600" /></div>
           <motion.button
             animate={{
                 scale: [1, 1.02, 1],
                 boxShadow: ["0 0 10px #00d4ff55", "0 0 20px #00d4ffaa", "0 0 10px #00d4ff55"]
             }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-full p-2.5 rounded-lg border-none bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-bold cursor-pointer"
+            className="w-full p-2.5 rounded-lg border-none bg-gradient-to-r from-cyan-400 to-green-400 text-slate-800 font-bold cursor-pointer"
           >
             Login
           </motion.button>
@@ -71,7 +71,7 @@ function StudentCard({ step }) {
                 boxShadow: ["0 0 15px #00d4ff88", "0 0 30px #00d4ffaa", "0 0 15px #00d4ff88"]
             }}
             transition={{ duration: 1.8, repeat: Infinity }}
-            className="bg-gradient-to-r from-cyan-400 to-green-400 p-5 rounded-xl text-center text-gray-900 font-bold text-lg"
+            className="bg-gradient-to-r from-cyan-400 to-green-400 p-5 rounded-xl text-center text-slate-800 font-bold text-lg"
           >
             Latecomer Pass Request
           </motion.div>
@@ -81,15 +81,15 @@ function StudentCard({ step }) {
       {step === 2 && (
         <>
           {/* Form filled + glowing submit */}
-          <div className="mb-2.5">Reason: <input type="text" value="Traffic delay" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-gray-100" /></div>
-          <div className="mb-5">ETA: <input type="text" value="10:30 AM" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-gray-100" /></div>
+          <div className="mb-2.5">Reason: <input type="text" value="Traffic delay" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-slate-600" /></div>
+          <div className="mb-5">ETA: <input type="text" value="10:30 AM" readOnly className="w-full p-2 rounded border border-[#00d4ff55] bg-[#ffffff11] text-slate-600" /></div>
           <motion.button
             animate={{
                 scale: [1, 1.02, 1],
                 boxShadow: ["0 0 10px #00ff8855", "0 0 20px #00ff88aa", "0 0 10px #00ff8855"]
             }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-full p-2.5 rounded-lg border-none bg-gradient-to-r from-green-400 to-cyan-400 text-gray-900 font-bold cursor-pointer"
+            className="w-full p-2.5 rounded-lg border-none bg-gradient-to-r from-green-400 to-cyan-400 text-slate-800 font-bold cursor-pointer"
           >
             Submit Request
           </motion.button>
@@ -125,7 +125,7 @@ function ApproverCard({ step }) {
                         : "0 20px 40px rgba(0,0,0,0.7)"
             }}
             transition={{ duration: 0.4 }}
-            className="flex-1 basis-[320px] max-w-[380px] bg-[rgba(15,25,15,0.9)] rounded-3xl border border-[rgba(0,255,136,0.35)] p-6 backdrop-blur-xl text-gray-100"
+            className="flex-1 basis-[320px] max-w-[380px] bg-white rounded-3xl border border-slate-200 p-6 shadow-md text-slate-800"
         >
             {/* header */}
             <div className="text-sm opacity-80 mb-4">
@@ -135,15 +135,15 @@ function ApproverCard({ step }) {
             {step === 0 && (
                 <>
                     {/* Login view */}
-                    <div className="mb-2.5">Email: <input type="email" value="hod@genc.edu" readOnly className="w-full p-2 rounded border border-[#00ff8855] bg-[#ffffff11] text-gray-100" /></div>
-                    <div className="mb-5">Password: <input type="password" value="********" readOnly className="w-full p-2 rounded border border-[#00ff8855] bg-[#ffffff11] text-gray-100" /></div>
+                    <div className="mb-2.5">Email: <input type="email" value="hod@genc.edu" readOnly className="w-full p-2 rounded border border-[#00ff8855] bg-[#ffffff11] text-slate-600" /></div>
+                    <div className="mb-5">Password: <input type="password" value="********" readOnly className="w-full p-2 rounded border border-[#00ff8855] bg-[#ffffff11] text-slate-600" /></div>
                     <motion.button
                         animate={{
                             scale: [1, 1.02, 1],
                             boxShadow: ["0 0 10px #00ff8855", "0 0 20px #00ff88aa", "0 0 10px #00ff8855"]
                         }}
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        className="w-full p-2.5 rounded-lg border-none bg-gradient-to-r from-green-400 to-cyan-400 text-gray-900 font-bold cursor-pointer"
+                        className="w-full p-2.5 rounded-lg border-none bg-gradient-to-r from-green-400 to-cyan-400 text-slate-800 font-bold cursor-pointer"
                     >
                         Login as HOD
                     </motion.button>
@@ -185,7 +185,7 @@ function ApproverCard({ step }) {
                                 boxShadow: ["0 0 10px #00ff8855", "0 0 20px #00ff88aa", "0 0 10px #00ff8855"]
                             }}
                             transition={{ duration: 1.5, repeat: Infinity }}
-                            className="bg-gradient-to-r from-green-400 to-green-600 text-gray-900 font-bold border-none py-1 px-4 rounded cursor-pointer"
+                            className="bg-gradient-to-r from-green-400 to-green-600 text-slate-800 font-bold border-none py-1 px-4 rounded cursor-pointer"
                         >
                             Approve
                         </motion.button>
@@ -232,20 +232,20 @@ function HistoryCard({ step }) {
 
     return (
         <motion.div
-            className="flex-1 basis-[320px] max-w-[380px] bg-[rgba(15,15,25,0.9)] rounded-3xl border border-[rgba(255,170,0,0.35)] p-6 backdrop-blur-xl text-gray-100 relative"
+            className="flex-1 basis-[320px] max-w-[380px] bg-white rounded-3xl border border-slate-200 p-6 shadow-md text-slate-800 relative"
         >
             <div className="flex mb-5 relative">
                 <motion.div
                     ref={studentTabRef}
                     onClick={() => {}} // Placeholder for click handler
-                    className={`py-2.5 px-4 cursor-pointer font-bold relative z-20 ${step % 2 === 0 ? "text-amber-400" : "text-gray-100/30"}`}
+                    className={`py-2.5 px-4 cursor-pointer font-bold relative z-20 ${step % 2 === 0 ? "text-amber-400" : "text-slate-600/30"}`}
                 >
                     Student History
                 </motion.div>
                 <motion.div
                     ref={approverTabRef}
                     onClick={() => {}} // Placeholder for click handler
-                    className={`py-2.5 px-4 cursor-pointer font-bold relative z-20 ${step % 2 !== 0 ? "text-amber-400" : "text-gray-100/30"}`}
+                    className={`py-2.5 px-4 cursor-pointer font-bold relative z-20 ${step % 2 !== 0 ? "text-amber-400" : "text-slate-600/30"}`}
                 >
                     Approver History
                 </motion.div>
